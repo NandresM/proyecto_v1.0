@@ -49,13 +49,8 @@
         nav ul li a:hover {
             color: #3498db;
         }
-        .productos{
-            display:block ;
-            columns: 3;
-            
-           
-        }
 
+       
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -86,6 +81,40 @@
         }
 
         /* Estilos para productos y servicios (placeholder) */
+        .Cuadricula {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .row {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px;
+        }
+        
+        .column img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .column p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+
         .product-grid, .service-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -99,7 +128,83 @@
             text-align: center;
         }
 
+        .servicios-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .servicio {
+            background-color: #f7f7f7;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 40px);
+        }
+        
+        .servicio i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .servicio h3 {
+            margin-top: 0;
+        }
+        
+        .servicio ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .servicio li {
+            margin-bottom: 10px;
+        }
+        
+        .servicio li:before {
+            content: "\2713";
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+
         /* Estilos para el formulario de contacto */
+        #contacto {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #formulario-contacto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #formulario-contacto label {
+            margin-bottom: 10px;
+        }
+        
+        #formulario-contacto input, #formulario-contacto textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        #formulario-contacto button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #formulario-contacto button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
         form {
             display: grid;
             gap: 1rem;

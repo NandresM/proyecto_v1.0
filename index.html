@@ -33,29 +33,109 @@
         </section>
 
         <section id="productos">
-            <div class="Cuadricula">  
-                 <h2>Nuestros Productos</h2>
-                <img src="Imagenes/Disco_2.jpeg" alt="Disco_2" width="200">
-                <p>Disco de 1TB</p>
-                <img src="Imagenes/Computador_1.jpeg" alt="Computador" width="200px">
-                <p>Computador de escritorio</p>
-                <img src="Imagenes/mouse.png" alt="mouse" width="200px">
-                <p>Mouse</p>  
+            <div class="Cuadricula">
+                <h2>Nuestros Productos</h2>
+                <div class="row">
+                    <div class="column">
+                        <img src="Imagenes/Disco_2.png" a lt="Disco_2" width="200">
+                        <p>Disco de 1TB</p>
+                    </div>
+                    <div class="column">
+                        <img src="Imagenes/Computador_1.png" alt="Computador" width="200px">
+                        <p>Computador de escritorio</p>
+                    </div>
+                    <div class="column">
+                        <img src="Imagenes/mouse.png" alt="mouse" width="200px">
+                        <p>Mouse</p>
+                    </div>
+                    <div class="column">
+                        <img src="Imagenes/teclado.png" alt="teclado" width="200px">
+                        <p>Teclado</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <img src="Imagenes/pantalla.png" alt="pantalla" width="200px">
+                        <p>Pantalla</p>
+                    </div>
+                    <div class="column">
+                        <img src="Imagenes/impresora.png" alt="impresora" width="200px">
+                        <p>Impresora</p>
+                    </div>
+                    <div class="column">
+                        <img src="Imagenes/scanner.png" alt="scanner" width="200px">
+                        <p>Scanner</p>
+                    </div>
+                    <div class="column">
+                        <img src="Imagenes/cámara.png" alt="cámara" width="200px">
+                        <p>Cámara</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <img src="Imagenes/altavoz.png" alt="altavoz" width="200px">
+                        <p>Altavoz</p>
+                    </div>
+                    <div class="column">
+                        <img src="Imagenes/micrófono.png" alt="micrófono" width="200px">
+                        <p>Micrófono</p>
+                    </div>
+                    <div class="column">
+                        <img src="Imagenes/proyector.png" alt="proyector" width="200px">
+                        <p>Proyector</p>
+                    </div>
+                    <div class="column">
+                        <img src="Imagenes/pizarra.png" alt="pizarra" width="200px">
+                        <p>Pizarra</p>
+                    </div>
+                </div>
             </div>
-          
-            <!-- Cuadricula de productos -->
-            
-        
         </section>
 
         <section id="servicios">
             <h2>Nuestros Servicios</h2>
-            <!-- servicios ofrecidos -->
+            <p>En STEWD, ofrecemos una variedad de servicios para satisfacer tus necesidades tecnológicas.</p>
+            <div class="servicios-grid">
+                <div class="servicio">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Mantenimiento de Computadores</h3>
+                    <p>Nuestro equipo de expertos en tecnología se encargará de mantener tus computadores en óptimo estado, asegurándose de que funcionen sin problemas y con la mayor eficiencia posible.</p>
+                    <ul>
+                        <li>Instalación y configuración de sistemas operativos</li>
+                        <li>Actualizaciones y parches de seguridad</li>
+                        <li>Reparación y mantenimiento de hardware</li>
+                        <li>Optimización del rendimiento del sistema</li>
+                    </ul>
+                </div>
+                <div class="servicio">
+                    <i class="fas fa-globe"></i>
+                    <h3>Creación de Páginas Web</h3>
+                    <p>Nuestros expertos en desarrollo web crearán una página web personalizada y atractiva para tu negocio, institución o proyecto, asegurándose de que se adapte a tus necesidades y objetivos.</p>
+                    <ul>
+                        <li>Diseño y desarrollo de páginas web responsivas</li>
+                        <li>Creación de contenido y gestión de contenidos</li>
+                        <li>Integración de funcionalidades y APIs</li>
+                        <li>Optimización para motores de búsqueda (SEO)</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <!-- formulario para contactp -->
+            <p>¿Tienes alguna pregunta o comentario? ¡No dudes en hacernoslo saber!</p>
+            <form id="formulario-contacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+        
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+        
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </main>
 
@@ -64,6 +144,7 @@
     </footer>
 
     <script>
+
         // Aquí irá el código JavaScript 
     </script>
 </body>
