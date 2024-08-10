@@ -10,18 +10,19 @@
 </head>
 <body>
     <header>
-        <h1>STEWD</h1>
+        <div class="logo-container">
+          <img src="Imagenes/logo.png" alt="logo.png" class="logo">
+        </div>
+        <h1 class="titulo">STEWD</h1>
         <nav>
-            <img src="Imagenes/logo.png" alt="logo.png" class = "logo";>
-
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
 
     <main>
         <section id="inicio">
@@ -124,16 +125,16 @@
         <section id="contacto">
             <h2>Contacto</h2>
             <p>¿Tienes alguna pregunta o comentario? ¡No dudes en hacernoslo saber!</p>
-            <form id="formulario-contacto">
+            <form id="formulario-contacto" action="base_datos/conexion.php" method="post">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
-        
+            
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" required>
-        
+            
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" required></textarea>
-        
+            
                 <button type="submit">Enviar</button>
             </form>
         </section>
@@ -144,8 +145,52 @@
     </footer>
 
     <script>
-
+        
         // Aquí irá el código JavaScript 
+
+        // Seleccionamos el formulario
+const formulario = document.getElementById('formulario-contacto');
+
+// Agregamos un evento de submit al formulario
+formulario.addEventListener('submit', (e) => {
+  // Prevenimos que el formulario se envíe automáticamente
+  e.preventDefault();
+
+  // Seleccionamos los campos del formulario
+  const nombre = document.getElementById('nombre');
+  const email = document.getElementById('email');
+  const mensaje = document.getElementById('mensaje');
+
+  // Validamos los campos
+  if (nombre.value.trim() === '') {
+    alert('Por favor, ingresa tu nombre');
+    nombre.focus();
+    return;
+  }
+
+  if (email.value.trim() === '') {
+    alert('Por favor, ingresa tu correo electrónico');
+    email.focus();
+    return;
+  }
+
+  if (!email.value.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+    alert('Por favor, ingresa un correo electrónico válido');
+    email.focus();
+    return;
+  }
+
+  if (mensaje.value.trim() === '') {
+    alert('Por favor, ingresa un mensaje');
+    mensaje.focus();
+    return;
+  }
+
+  // Si todos los campos son válidos, enviamos el formulario
+  formulario.submit();
+});
+
+
     </script>
 </body>
 </html>
