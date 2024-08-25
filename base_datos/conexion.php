@@ -1,23 +1,16 @@
 <?php
 
-Class Cconexion {
+$servidor = 'localhost';
+$usuario = 'root';
+$clave = ' '; 
+$BaseDeDatos = 'Bd_ejemplo';
 
-    public function ConexionBD(){
-        $host = 'localhost';
-        $dbname = 'Bd_ejemplo';
-        $username 'root';
-        $password = ' ';
-    }
+// Establecer la conexión
+$enlace = mysqli_connect($servidor, $usuario, $clave, $BaseDeDatos);
 
-    try {
-        $conn new PDO("mysql:host=$host;$dbname",$username, $password) ;
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Se conectó correctamente a la base de datos";
-    } catch (PDOException $error){
-    echo "No se logró conectar a la base de datos: $dbname, error: " . $error ->getAttribute;
-    }
-
-    return $conn;
-    }
+// Verificar la conexión
+if (!$enlace) {
+    die("Conexión fallida: " . mysqli_connect_error());
 }
+
 ?>

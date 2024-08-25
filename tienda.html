@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+
+
+header {
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            border-bottom: 1px solid #ccc;
+          }
+          
+          .logo-container {
+            width: 20%;
+          }
+          
+          .logo {
+            width: 100%;
+            height: auto;
+          }
+          
+          .titulo {
+            font-size: 100px;
+            font-weight: bold;
+            margin: 0;
+            color: #fefefe;
+          }
+          
+          nav {
+            width: 20%;
+            color: #fefefe;
+            font-size: 20px;
+          }
+          
+          nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+          }
+          
+          nav li { 
+            margin-right: 10px;
+          }
+          
+          nav a {
+            text-decoration: none;
+            color: #fefefe;
+          }
+          
+          nav a:hover {
+            color: #666;
+          }
+
+
+/* Pantalla de pago */
+
+#pago {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#pago h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#formulario-pago {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.grupo {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+
+</style>
+<body>
+    <header>
+        <div class="logo-container">
+          <img src="Imagenes/logo.png" alt="logo.png" class="logo">
+        </div>
+        <h1 class="titulo">STEWD</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="TIEDA" style="color: red;" > TIENDA</a>            </li>
+          </ul>
+        </nav>
+      </header>
+
+
+      <!-- Pantalla de pago -->
+<section id="pago">
+    <h2>Pago</h2>
+    <form id="formulario-pago">
+      <div class="grupo">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div class="grupo">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+      </div>
+      <div class="grupo">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+      <div class="grupo">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+      </div>
+      <div class="grupo">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required>
+      </div>
+      <div class="grupo">
+        <label for="pais">País:</label>
+        <select id="pais" name="pais" required>
+          <option value="">Seleccione un país</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Chile">Chile</option>
+          <option value="Colombia">Colombia</option>
+          <!-- ... -->
+        </select>
+      </div>
+      <div class="grupo">
+        <label for="tarjeta">Número de tarjeta:</label>
+        <input type="text" id="tarjeta" name="tarjeta" required>
+      </div>
+      <div class="grupo">
+        <label for="vencimiento">Vencimiento (MM/AA):</label>
+        <input type="text" id="vencimiento" name="vencimiento" required>
+      </div>
+      <div class="grupo">
+        <label for="codigo">Código de seguridad:</label>
+        <input type="text" id="codigo" name="codigo" required>
+      </div>
+      <button type="submit">Realizar pago</button>
+    </form>
+  </section>
+
+</body>
+</html>

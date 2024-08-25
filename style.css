@@ -54,7 +54,7 @@
             text-align: center;
           }
           
-          nav li {
+          nav li { 
             margin-right: 10px;
           }
           
@@ -97,7 +97,7 @@
             width: 100%;
         }
 
-        /* Estilos para productos y servicios (placeholder) */
+        /* Estilos para productos y servicios  */
         .Cuadricula {
             display: flex;
             flex-direction: column;
