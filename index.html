@@ -40,57 +40,81 @@
                     <div class="column">
                         <img src="Imagenes/Disco_2.png" a lt="Disco_2" width="200">
                         <p>Disco de 1TB</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                     <div class="column">
                         <img src="Imagenes/Computador_1.png" alt="Computador" width="200px">
                         <p>Computador de escritorio</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                     <div class="column">
                         <img src="Imagenes/mouse.png" alt="mouse" width="200px">
                         <p>Mouse</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                     <div class="column">
                         <img src="Imagenes/teclado.png" alt="teclado" width="200px">
                         <p>Teclado</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                 </div>
                 <div class="row">
                     <div class="column">
                         <img src="Imagenes/pantalla.png" alt="pantalla" width="200px">
                         <p>Pantalla</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                     <div class="column">
                         <img src="Imagenes/impresora.png" alt="impresora" width="200px">
                         <p>Impresora</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                     <div class="column">
                         <img src="Imagenes/scanner.png" alt="scanner" width="200px">
                         <p>Scanner</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                     <div class="column">
                         <img src="Imagenes/cámara.png" alt="cámara" width="200px">
                         <p>Cámara</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                 </div>
                 <div class="row">
                     <div class="column">
                         <img src="Imagenes/altavoz.png" alt="altavoz" width="200px">
                         <p>Altavoz</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                     <div class="column">
                         <img src="Imagenes/micrófono.png" alt="micrófono" width="200px">
                         <p>Micrófono</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                     <div class="column">
                         <img src="Imagenes/proyector.png" alt="proyector" width="200px">
                         <p>Proyector</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                     <div class="column">
                         <img src="Imagenes/pizarra.png" alt="pizarra" width="200px">
                         <p>Pizarra</p>
+                        <button class="agg_carrito" >Agregar al carro </button> 
                     </div>
                 </div>
             </div>
+
+
+            <div class="carrito">
+                <h2>Carrito de compras</h2>
+                <ul id="carrito-lista">
+                  <!-- Aquí se mostrarán los productos agregados -->
+                </ul>
+                <p id="carrito-cantidad">Cantidad de productos: 0</p>
+                <button id ="pagar"><a href="tienda.html">Pagar</a></button>
+
+              </div>
+            </section>   
         </section>
 
         <section id="servicios">
@@ -147,7 +171,7 @@
     <script>
         
         // Aquí irá el código JavaScript 
-
+/*
         // Seleccionamos el formulario
 const formulario = document.getElementById('formulario-contacto');
 
@@ -161,7 +185,7 @@ formulario.addEventListener('submit', (e) => {
   const email = document.getElementById('email');
   const mensaje = document.getElementById('mensaje');
 
-  // Validamos los campos
+  // Valida los campos
   if (nombre.value.trim() === '') {
     alert('Por favor, ingresa tu nombre');
     nombre.focus();
@@ -186,9 +210,64 @@ formulario.addEventListener('submit', (e) => {
     return;
   }
 
-  // Si todos los campos son válidos, enviamos el formulario
+  // enviamos el formulario
   formulario.submit();
 });
+
+*/
+
+  //CODIGO PARA CARRITO
+
+const carrito = document.getElementById('carrito-lista');
+  const carritoCantidad = document.getElementById('carrito-cantidad');
+  let productosEnCarrito = [];
+
+  // Agregar producto al carrito
+  document.querySelectorAll('.agg_carrito').forEach(button => {
+    button.addEventListener('click', () => {
+      const producto = button.parentNode;
+      const productoNombre = producto.querySelector('p').textContent;
+      const productoImagen = producto.querySelector('img').src;
+      const productoPrecio = 100; // precio del producto
+
+      // Agregar producto al carrito
+      productosEnCarrito.push({
+        nombre: productoNombre,
+        imagen: productoImagen,
+        precio: productoPrecio,
+        cantidad: 1
+      });
+
+      // Actualizar carrito
+      actualizarCarrito();
+    });
+  });
+
+  // Actualizar carrito
+  function actualizarCarrito() {
+    carrito.innerHTML = '';
+    productosEnCarrito.forEach(producto => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${producto.nombre} x ${producto.cantidad}`;
+      carrito.appendChild(listItem);
+    });
+    carritoCantidad.textContent = `Cantidad de productos: ${productosEnCarrito.length}`;
+  }
+
+  // Eliminar producto del carrito
+  carrito.addEventListener('click', event => {
+    if (event.target.tagName === 'BUTTON' && event.target.textContent === 'Eliminar') {
+      const productoIndex = productosEnCarrito.findIndex(producto => producto.nombre === event.target.parentNode.textContent);
+      productosEnCarrito.splice(productoIndex, 1);
+      actualizarCarrito();
+    }
+  });
+
+  // Checkout
+  document.getElementById('pagar').addEventListener('click', () => {
+    
+    // Proceder a la pantalla de pago
+  });
 
 
     </script>
