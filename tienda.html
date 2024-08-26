@@ -144,55 +144,85 @@ button[type="submit"]:hover {
       </header>
 
 
-      <!-- Pantalla de pago -->
-<section id="pago">
-    <h2>Pago</h2>
-    <form id="formulario-pago">
-      <div class="grupo">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-      </div>
-      <div class="grupo">
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required>
-      </div>
-      <div class="grupo">
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
-      </div>
-      <div class="grupo">
-        <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion" required>
-      </div>
-      <div class="grupo">
-        <label for="ciudad">Ciudad:</label>
-        <input type="text" id="ciudad" name="ciudad" required>
-      </div>
-      <div class="grupo">
-        <label for="pais">País:</label>
-        <select id="pais" name="pais" required>
-          <option value="">Seleccione un país</option>
-          <option value="Argentina">Argentina</option>
-          <option value="Chile">Chile</option>
-          <option value="Colombia">Colombia</option>
-          <!-- ... -->
-        </select>
-      </div>
-      <div class="grupo">
-        <label for="tarjeta">Número de tarjeta:</label>
-        <input type="text" id="tarjeta" name="tarjeta" required>
-      </div>
-      <div class="grupo">
-        <label for="vencimiento">Vencimiento (MM/AA):</label>
-        <input type="text" id="vencimiento" name="vencimiento" required>
-      </div>
-      <div class="grupo">
-        <label for="codigo">Código de seguridad:</label>
-        <input type="text" id="codigo" name="codigo" required>
-      </div>
-      <button type="submit">Realizar pago</button>
-    </form>
-  </section>
+          <!-- Sección para mostrar los productos seleccionados -->
+          <section id="resumen-compra">
+            <h2>Resumen de compra</h2>
+            <ul id="productos-seleccionados">
+              <!-- Aquí se mostrarán los productos seleccionados -->
+            </ul>
+          </section>
 
-</body>
-</html>
+          <!-- Sección de pago -->
+          <section id="pago">
+            <h2>Pago</h2>
+           
+       
+
+
+
+
+            <!-- Pantalla de pago -->
+      <section id="pago">
+          <h2>Pago</h2>
+          <form id="formulario-pago">
+            <div class="grupo">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="grupo">
+              <label for="apellido">Apellido:</label>
+              <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div class="grupo">
+              <label for="correo">Correo electrónico:</label>
+              <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="grupo">
+              <label for="direccion">Dirección:</label>
+              <input type="text" id="direccion" name="direccion" required>
+            </div>
+            <div class="grupo">
+              <label for="ciudad">Ciudad:</label>
+              <input type="text" id="ciudad" name="ciudad" required>
+            </div>
+            <div class="grupo">
+              <label for="pais">País:</label>
+              <select id="pais" name="pais" required>
+                <option value="">Seleccione un país</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Chile">Chile</option>
+                <option value="Colombia">Colombia</option>
+                <!-- ... -->
+              </select>
+            </div>
+            <div class="grupo">
+              <label for="tarjeta">Número de tarjeta:</label>
+              <input type="text" id="tarjeta" name="tarjeta" required>
+            </div>
+            <div class="grupo">
+              <label for="vencimiento">Vencimiento (MM/AA):</label>
+              <input type="text" id="vencimiento" name="vencimiento" required>
+            </div>
+            <div class="grupo">
+              <label for="codigo">Código de seguridad:</label>
+              <input type="text" id="codigo" name="codigo" required>
+            </div>
+            <button type="submit">Realizar pago</button>
+          </form>
+        </section>
+
+
+
+
+
+        <script src="index.html"></script>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            actualizarCarrito();
+          });
+        </script>  
+
+
+      </body>
+      </html>
